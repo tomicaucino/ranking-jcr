@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --background: #faf7f0;
+  --foreground: #1c2b23;
+
+  --color-primary-50: #eef5f0;
+  --color-primary-100: #d3e6da;
+  --color-primary-200: #a8ccb6;
+  --color-primary-300: #78ad8e;
+  --color-primary-400: #4c8a6a;
+  --color-primary-500: #2f6b4c;
+  --color-primary-600: #1f5039;
+  --color-primary-700: #163d2c;
+  --color-primary-800: #102b20;
+  --color-primary-900: #0b1f17;
+
+  --color-accent-400: #d9b84f;
+  --color-accent-500: #c9a227;
+  --color-accent-600: #a5811b;
+
+  --color-card: #ffffff;
+  --color-border: #e4ddcc;
+  --color-muted: #6b7568;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+  --color-accent-400: var(--color-accent-400);
+  --color-accent-500: var(--color-accent-500);
+  --color-accent-600: var(--color-accent-600);
+  --color-card: var(--color-card);
+  --color-border: var(--color-border);
+  --color-muted: var(--color-muted);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
