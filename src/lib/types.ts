@@ -47,6 +47,8 @@ export interface Standing {
   drawn: number;
   lost: number;
   points: number;
+  /** Hoyos de margen sumados en los partidos ganados (ej: "3 up" suma 3, "4&3" suma 4). */
+  holesFor: number;
 }
 
 /** Estado devuelto por los Server Actions de formularios (para useActionState). */

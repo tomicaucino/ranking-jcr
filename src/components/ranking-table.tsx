@@ -13,6 +13,9 @@ export function RankingTable({ standings }: { standings: Standing[] }) {
           <Th className="text-center">PG</Th>
           <Th className="text-center">PE</Th>
           <Th className="text-center">PP</Th>
+          <Th className="text-center" title="Hoyos a favor">
+            H+
+          </Th>
           <Th className="text-center">Puntos</Th>
         </Tr>
       </Thead>
@@ -32,6 +35,7 @@ export function RankingTable({ standings }: { standings: Standing[] }) {
             <Td className="text-center">{s.won}</Td>
             <Td className="text-center">{s.drawn}</Td>
             <Td className="text-center">{s.lost}</Td>
+            <Td className="text-center">{s.holesFor}</Td>
             <Td className="text-center">
               <Badge tone={i === 0 ? "gold" : "green"} className="text-sm font-semibold">
                 {s.points}

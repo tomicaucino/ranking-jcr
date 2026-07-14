@@ -97,7 +97,7 @@ Abrí [http://localhost:3000](http://localhost:3000).
 Toda la lógica de ranking vive en [`src/lib/ranking.ts`](src/lib/ranking.ts):
 
 - `POINTS`: victoria = 3, empate = 1 (para cada jugador), derrota = 0, walkover doble = -1 (para cada jugador).
-- `calculateStandings`: orden de la tabla (hoy: puntos desc, luego diferencia ganados/jugados desc).
+- `calculateStandings`: orden de la tabla (hoy: puntos desc, luego diferencia ganados/jugados desc). También calcula `holesFor` ("H+", hoyos a favor): la columna suma el margen de los partidos ganados (ej. "3 up" suma 3, "4&3" suma 4), tomado del primer número de `result_text`. Hoy es solo informativa, no interviene en el orden de la tabla.
 
 Un partido de match play puede terminar empatado ("AS", all square, cuando ninguno de los dos jugadores queda arriba al terminar el recorrido). A diferencia del walkover, el empate lo puede cargar cualquiera de los dos jugadores del partido (no es exclusivo del admin): en el formulario de carga de resultado, "Empate" es una tercera opción junto a los dos jugadores.
 
