@@ -1,6 +1,14 @@
 import { Badge } from "@/components/ui/badge";
 import { Table, Thead, Tbody, Tr, Th, Td } from "@/components/ui/table";
+import { cn } from "@/lib/cn";
 import type { Standing } from "@/lib/types";
+
+/** Fondo muy sutil para el podio (1º oro, 2º plata, 3º bronce). */
+const PODIUM_ROW_TINT: Record<number, string> = {
+  1: "bg-[#d4af37]/8",
+  2: "bg-[#c0c0c0]/8",
+  3: "bg-[#cd7f32]/8",
+};
 
 /**
  * Un <table> real no soporta reordenar columnas por breakpoint con CSS
@@ -30,7 +38,7 @@ export function RankingTable({ standings }: { standings: Standing[] }) {
           </Thead>
           <Tbody>
             {standings.map((s, i) => (
-              <Tr key={s.player.id}>
+              <Tr key={s.player.id} className={cn(PODIUM_ROW_TINT[i + 1])}>
                 <RankCell rank={i + 1} />
                 <PlayerCell standing={s} />
                 <PointsCell standing={s} isLeader={i === 0} />
@@ -59,7 +67,7 @@ export function RankingTable({ standings }: { standings: Standing[] }) {
           </Thead>
           <Tbody>
             {standings.map((s, i) => (
-              <Tr key={s.player.id}>
+              <Tr key={s.player.id} className={cn(PODIUM_ROW_TINT[i + 1])}>
                 <RankCell rank={i + 1} />
                 <PlayerCell standing={s} />
                 <StatCells standing={s} />
